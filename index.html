@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leopard@^1/dist/index.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <button id="greenFlag"></button>
+    <div id="project"></div>
+
+    <script type="module">
+      import project from "./index.js";
+
+      project.attach("#project");
+      document.getElementById("greenFlag").style.visibility = "hidden";
+      document.querySelector("#greenFlag").addEventListener("click", () => {
+        project.greenFlag();
+      });
+
+      // Autoplay
+      project.greenFlag();
+    </script>
+  </body>
+  <style>
+    * {
+      margin: auto;
+      padding: auto;
+
+      box-sizing: border-box;
+    }
+    #project {
+      top: 100px !important;
+
+      height: 80vh !important;
+      width: 50vw !important;
+    }
+    body {
+      background-image: url("https://i.postimg.cc/G2HSVLyT/background-Robot.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  </style>
+</html>
